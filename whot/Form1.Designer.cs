@@ -109,6 +109,7 @@
             this.pesel_input.Name = "pesel_input";
             this.pesel_input.Size = new System.Drawing.Size(73, 20);
             this.pesel_input.TabIndex = 8;
+            this.pesel_input.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.pesel_input_MaskInputRejected);
             // 
             // data_ur_input
             // 
@@ -124,6 +125,7 @@
             this.miejsce_ur_input.Name = "miejsce_ur_input";
             this.miejsce_ur_input.Size = new System.Drawing.Size(188, 20);
             this.miejsce_ur_input.TabIndex = 6;
+            this.miejsce_ur_input.TextChanged += new System.EventHandler(this.miejsce_ur_input_TextChanged);
             // 
             // imie_input
             // 
@@ -131,6 +133,7 @@
             this.imie_input.Name = "imie_input";
             this.imie_input.Size = new System.Drawing.Size(264, 20);
             this.imie_input.TabIndex = 5;
+            this.imie_input.TextChanged += new System.EventHandler(this.imie_input_TextChanged);
             // 
             // nazwisko_input
             // 
@@ -138,6 +141,7 @@
             this.nazwisko_input.Name = "nazwisko_input";
             this.nazwisko_input.Size = new System.Drawing.Size(264, 20);
             this.nazwisko_input.TabIndex = 4;
+            this.nazwisko_input.TextChanged += new System.EventHandler(this.nazwisko_input_TextChanged);
             // 
             // label4
             // 
@@ -202,6 +206,7 @@
             this.mail_input.Name = "mail_input";
             this.mail_input.Size = new System.Drawing.Size(121, 20);
             this.mail_input.TabIndex = 13;
+            this.mail_input.TextChanged += new System.EventHandler(this.mail_input_TextChanged);
             // 
             // label10
             // 
@@ -218,6 +223,7 @@
             this.nr_tel_input.Name = "nr_tel_input";
             this.nr_tel_input.Size = new System.Drawing.Size(93, 20);
             this.nr_tel_input.TabIndex = 12;
+            this.nr_tel_input.TextChanged += new System.EventHandler(this.nr_tel_input_TextChanged);
             // 
             // miejscowosc_input
             // 
@@ -225,6 +231,7 @@
             this.miejscowosc_input.Name = "miejscowosc_input";
             this.miejscowosc_input.Size = new System.Drawing.Size(295, 20);
             this.miejscowosc_input.TabIndex = 11;
+            this.miejscowosc_input.TextChanged += new System.EventHandler(this.miejscowosc_input_TextChanged);
             // 
             // ulica_input
             // 
@@ -236,17 +243,18 @@
             // 
             // poczta_input
             // 
-            this.poczta_input.Location = new System.Drawing.Point(198, 86);
+            this.poczta_input.Location = new System.Drawing.Point(187, 86);
             this.poczta_input.Name = "poczta_input";
-            this.poczta_input.Size = new System.Drawing.Size(207, 20);
+            this.poczta_input.Size = new System.Drawing.Size(218, 20);
             this.poczta_input.TabIndex = 9;
+            this.poczta_input.TextChanged += new System.EventHandler(this.poczta_input_TextChanged);
             // 
             // kod_pocztowy_input
             // 
             this.kod_pocztowy_input.Location = new System.Drawing.Point(126, 86);
-            this.kod_pocztowy_input.Mask = "00-0000";
+            this.kod_pocztowy_input.Mask = "00-000";
             this.kod_pocztowy_input.Name = "kod_pocztowy_input";
-            this.kod_pocztowy_input.Size = new System.Drawing.Size(48, 20);
+            this.kod_pocztowy_input.Size = new System.Drawing.Size(39, 20);
             this.kod_pocztowy_input.TabIndex = 9;
             // 
             // label9
