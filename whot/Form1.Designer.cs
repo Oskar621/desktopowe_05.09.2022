@@ -31,39 +31,39 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.dane_osobowe_groupbox = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pesel_input = new System.Windows.Forms.MaskedTextBox();
+            this.data_ur_input = new System.Windows.Forms.MaskedTextBox();
+            this.miejsce_ur_input = new System.Windows.Forms.TextBox();
+            this.imie_input = new System.Windows.Forms.TextBox();
+            this.nazwisko_input = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.nazwisko_input = new System.Windows.Forms.TextBox();
-            this.imie_input = new System.Windows.Forms.TextBox();
-            this.miejsce_ur_input = new System.Windows.Forms.TextBox();
-            this.data_ur_input = new System.Windows.Forms.MaskedTextBox();
-            this.pesel_input = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.adres_kor_groupbox = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.kod_pocztowy_input = new System.Windows.Forms.MaskedTextBox();
-            this.poczta_input = new System.Windows.Forms.TextBox();
-            this.ulica_input = new System.Windows.Forms.TextBox();
-            this.miejscowosc_input = new System.Windows.Forms.TextBox();
-            this.nr_tel_input = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.mail_input = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nr_tel_input = new System.Windows.Forms.TextBox();
+            this.miejscowosc_input = new System.Windows.Forms.TextBox();
+            this.ulica_input = new System.Windows.Forms.TextBox();
+            this.poczta_input = new System.Windows.Forms.TextBox();
+            this.kod_pocztowy_input = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.termin_egzaminu_combobox = new System.Windows.Forms.ComboBox();
             this.informatyk_radiobutton = new System.Windows.Forms.RadioButton();
             this.programista_radiobutton = new System.Windows.Forms.RadioButton();
             this.egzamin_combobox = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.egzamin_nazwa_label = new System.Windows.Forms.Label();
             this.podejscie_groupbox = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.praktyczna_checkbox = new System.Windows.Forms.CheckBox();
+            this.po_raz_kolejny_radiobutton = new System.Windows.Forms.RadioButton();
+            this.pisemna_checkbox = new System.Windows.Forms.CheckBox();
+            this.po_raz_pierwszy_radiobutton = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -102,24 +102,42 @@
             this.dane_osobowe_groupbox.TabStop = false;
             this.dane_osobowe_groupbox.Text = "Dane osobowe ucznia";
             // 
-            // label2
+            // pesel_input
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Nazwisko:";
+            this.pesel_input.Location = new System.Drawing.Point(137, 115);
+            this.pesel_input.Mask = "00000000000";
+            this.pesel_input.Name = "pesel_input";
+            this.pesel_input.Size = new System.Drawing.Size(73, 20);
+            this.pesel_input.TabIndex = 8;
             // 
-            // label3
+            // data_ur_input
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Imię (imiona):";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.data_ur_input.Location = new System.Drawing.Point(137, 81);
+            this.data_ur_input.Mask = "00.00.0000";
+            this.data_ur_input.Name = "data_ur_input";
+            this.data_ur_input.Size = new System.Drawing.Size(62, 20);
+            this.data_ur_input.TabIndex = 7;
+            // 
+            // miejsce_ur_input
+            // 
+            this.miejsce_ur_input.Location = new System.Drawing.Point(217, 81);
+            this.miejsce_ur_input.Name = "miejsce_ur_input";
+            this.miejsce_ur_input.Size = new System.Drawing.Size(188, 20);
+            this.miejsce_ur_input.TabIndex = 6;
+            // 
+            // imie_input
+            // 
+            this.imie_input.Location = new System.Drawing.Point(141, 52);
+            this.imie_input.Name = "imie_input";
+            this.imie_input.Size = new System.Drawing.Size(264, 20);
+            this.imie_input.TabIndex = 5;
+            // 
+            // nazwisko_input
+            // 
+            this.nazwisko_input.Location = new System.Drawing.Point(141, 24);
+            this.nazwisko_input.Name = "nazwisko_input";
+            this.nazwisko_input.Size = new System.Drawing.Size(264, 20);
+            this.nazwisko_input.TabIndex = 4;
             // 
             // label4
             // 
@@ -139,42 +157,24 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Data i miejsce urodzenia:";
             // 
-            // nazwisko_input
+            // label3
             // 
-            this.nazwisko_input.Location = new System.Drawing.Point(141, 24);
-            this.nazwisko_input.Name = "nazwisko_input";
-            this.nazwisko_input.Size = new System.Drawing.Size(264, 20);
-            this.nazwisko_input.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Imię (imiona):";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // imie_input
+            // label2
             // 
-            this.imie_input.Location = new System.Drawing.Point(141, 52);
-            this.imie_input.Name = "imie_input";
-            this.imie_input.Size = new System.Drawing.Size(264, 20);
-            this.imie_input.TabIndex = 5;
-            // 
-            // miejsce_ur_input
-            // 
-            this.miejsce_ur_input.Location = new System.Drawing.Point(217, 81);
-            this.miejsce_ur_input.Name = "miejsce_ur_input";
-            this.miejsce_ur_input.Size = new System.Drawing.Size(188, 20);
-            this.miejsce_ur_input.TabIndex = 6;
-            // 
-            // data_ur_input
-            // 
-            this.data_ur_input.Location = new System.Drawing.Point(137, 81);
-            this.data_ur_input.Mask = "00.00.0000";
-            this.data_ur_input.Name = "data_ur_input";
-            this.data_ur_input.Size = new System.Drawing.Size(62, 20);
-            this.data_ur_input.TabIndex = 7;
-            // 
-            // pesel_input
-            // 
-            this.pesel_input.Location = new System.Drawing.Point(137, 115);
-            this.pesel_input.Mask = "00000000000";
-            this.pesel_input.Name = "pesel_input";
-            this.pesel_input.Size = new System.Drawing.Size(73, 20);
-            this.pesel_input.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Nazwisko:";
             // 
             // adres_kor_groupbox
             // 
@@ -196,77 +196,12 @@
             this.adres_kor_groupbox.TabStop = false;
             this.adres_kor_groupbox.Text = "Adres Korespondencyjny";
             // 
-            // label6
+            // mail_input
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Miejscowość:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 58);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Ulica i numer domu:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 89);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Kod pocztowy i poczta";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(-3, 122);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(155, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Numer telefonu z kierunkowym:";
-            // 
-            // kod_pocztowy_input
-            // 
-            this.kod_pocztowy_input.Location = new System.Drawing.Point(126, 86);
-            this.kod_pocztowy_input.Mask = "00-0000";
-            this.kod_pocztowy_input.Name = "kod_pocztowy_input";
-            this.kod_pocztowy_input.Size = new System.Drawing.Size(48, 20);
-            this.kod_pocztowy_input.TabIndex = 9;
-            // 
-            // poczta_input
-            // 
-            this.poczta_input.Location = new System.Drawing.Point(198, 86);
-            this.poczta_input.Name = "poczta_input";
-            this.poczta_input.Size = new System.Drawing.Size(207, 20);
-            this.poczta_input.TabIndex = 9;
-            // 
-            // ulica_input
-            // 
-            this.ulica_input.Location = new System.Drawing.Point(112, 55);
-            this.ulica_input.Name = "ulica_input";
-            this.ulica_input.Size = new System.Drawing.Size(293, 20);
-            this.ulica_input.TabIndex = 10;
-            // 
-            // miejscowosc_input
-            // 
-            this.miejscowosc_input.Location = new System.Drawing.Point(110, 24);
-            this.miejscowosc_input.Name = "miejscowosc_input";
-            this.miejscowosc_input.Size = new System.Drawing.Size(295, 20);
-            this.miejscowosc_input.TabIndex = 11;
-            // 
-            // nr_tel_input
-            // 
-            this.nr_tel_input.Location = new System.Drawing.Point(158, 119);
-            this.nr_tel_input.Name = "nr_tel_input";
-            this.nr_tel_input.Size = new System.Drawing.Size(93, 20);
-            this.nr_tel_input.TabIndex = 12;
+            this.mail_input.Location = new System.Drawing.Point(284, 119);
+            this.mail_input.Name = "mail_input";
+            this.mail_input.Size = new System.Drawing.Size(121, 20);
+            this.mail_input.TabIndex = 13;
             // 
             // label10
             // 
@@ -277,12 +212,78 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "mail:";
             // 
-            // mail_input
+            // nr_tel_input
             // 
-            this.mail_input.Location = new System.Drawing.Point(284, 119);
-            this.mail_input.Name = "mail_input";
-            this.mail_input.Size = new System.Drawing.Size(121, 20);
-            this.mail_input.TabIndex = 13;
+            this.nr_tel_input.Location = new System.Drawing.Point(158, 119);
+            this.nr_tel_input.Name = "nr_tel_input";
+            this.nr_tel_input.Size = new System.Drawing.Size(93, 20);
+            this.nr_tel_input.TabIndex = 12;
+            // 
+            // miejscowosc_input
+            // 
+            this.miejscowosc_input.Location = new System.Drawing.Point(110, 24);
+            this.miejscowosc_input.Name = "miejscowosc_input";
+            this.miejscowosc_input.Size = new System.Drawing.Size(295, 20);
+            this.miejscowosc_input.TabIndex = 11;
+            // 
+            // ulica_input
+            // 
+            this.ulica_input.Location = new System.Drawing.Point(112, 55);
+            this.ulica_input.Name = "ulica_input";
+            this.ulica_input.Size = new System.Drawing.Size(293, 20);
+            this.ulica_input.TabIndex = 10;
+            this.ulica_input.TextChanged += new System.EventHandler(this.ulica_input_TextChanged);
+            // 
+            // poczta_input
+            // 
+            this.poczta_input.Location = new System.Drawing.Point(198, 86);
+            this.poczta_input.Name = "poczta_input";
+            this.poczta_input.Size = new System.Drawing.Size(207, 20);
+            this.poczta_input.TabIndex = 9;
+            // 
+            // kod_pocztowy_input
+            // 
+            this.kod_pocztowy_input.Location = new System.Drawing.Point(126, 86);
+            this.kod_pocztowy_input.Mask = "00-0000";
+            this.kod_pocztowy_input.Name = "kod_pocztowy_input";
+            this.kod_pocztowy_input.Size = new System.Drawing.Size(48, 20);
+            this.kod_pocztowy_input.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(-3, 122);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(155, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Numer telefonu z kierunkowym:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 89);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Kod pocztowy i poczta";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Ulica i numer domu:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Miejscowość:";
             // 
             // label11
             // 
@@ -332,77 +333,75 @@
             // egzamin_combobox
             // 
             this.egzamin_combobox.FormattingEnabled = true;
-            this.egzamin_combobox.Items.AddRange(new object[] {
-            "INF 04.",
-            "INF 03.",
-            "INF 02."});
             this.egzamin_combobox.Location = new System.Drawing.Point(15, 500);
             this.egzamin_combobox.Name = "egzamin_combobox";
             this.egzamin_combobox.Size = new System.Drawing.Size(84, 21);
             this.egzamin_combobox.TabIndex = 7;
+            this.egzamin_combobox.SelectedIndexChanged += new System.EventHandler(this.egzamin_combobox_SelectedIndexChanged);
             // 
-            // label12
+            // egzamin_nazwa_label
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(117, 503);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(252, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Projektowanie, programowanie i testowanie aplikacji";
+            this.egzamin_nazwa_label.AutoSize = true;
+            this.egzamin_nazwa_label.Location = new System.Drawing.Point(117, 503);
+            this.egzamin_nazwa_label.Name = "egzamin_nazwa_label";
+            this.egzamin_nazwa_label.Size = new System.Drawing.Size(0, 13);
+            this.egzamin_nazwa_label.TabIndex = 8;
             // 
             // podejscie_groupbox
             // 
-            this.podejscie_groupbox.Controls.Add(this.checkBox2);
-            this.podejscie_groupbox.Controls.Add(this.radioButton3);
-            this.podejscie_groupbox.Controls.Add(this.checkBox1);
-            this.podejscie_groupbox.Controls.Add(this.radioButton2);
+            this.podejscie_groupbox.Controls.Add(this.praktyczna_checkbox);
+            this.podejscie_groupbox.Controls.Add(this.po_raz_kolejny_radiobutton);
+            this.podejscie_groupbox.Controls.Add(this.pisemna_checkbox);
+            this.podejscie_groupbox.Controls.Add(this.po_raz_pierwszy_radiobutton);
             this.podejscie_groupbox.Location = new System.Drawing.Point(35, 538);
             this.podejscie_groupbox.Name = "podejscie_groupbox";
             this.podejscie_groupbox.Size = new System.Drawing.Size(428, 49);
             this.podejscie_groupbox.TabIndex = 9;
             this.podejscie_groupbox.TabStop = false;
             // 
-            // radioButton2
+            // praktyczna_checkbox
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(97, 17);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "po raz pierwszy";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.praktyczna_checkbox.AutoSize = true;
+            this.praktyczna_checkbox.Location = new System.Drawing.Point(350, 20);
+            this.praktyczna_checkbox.Name = "praktyczna_checkbox";
+            this.praktyczna_checkbox.Size = new System.Drawing.Size(80, 17);
+            this.praktyczna_checkbox.TabIndex = 11;
+            this.praktyczna_checkbox.Text = "praktycznej";
+            this.praktyczna_checkbox.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // po_raz_kolejny_radiobutton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(117, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(141, 17);
-            this.radioButton3.TabIndex = 11;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "po raz kolejny do części:";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.po_raz_kolejny_radiobutton.AutoSize = true;
+            this.po_raz_kolejny_radiobutton.Location = new System.Drawing.Point(117, 19);
+            this.po_raz_kolejny_radiobutton.Name = "po_raz_kolejny_radiobutton";
+            this.po_raz_kolejny_radiobutton.Size = new System.Drawing.Size(141, 17);
+            this.po_raz_kolejny_radiobutton.TabIndex = 11;
+            this.po_raz_kolejny_radiobutton.TabStop = true;
+            this.po_raz_kolejny_radiobutton.Text = "po raz kolejny do części:";
+            this.po_raz_kolejny_radiobutton.UseVisualStyleBackColor = true;
+            this.po_raz_kolejny_radiobutton.CheckedChanged += new System.EventHandler(this.po_raz_kolejny_radiobutton_CheckedChanged);
             // 
-            // checkBox1
+            // pisemna_checkbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(277, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(67, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "pisemnej";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.pisemna_checkbox.AutoSize = true;
+            this.pisemna_checkbox.Location = new System.Drawing.Point(277, 20);
+            this.pisemna_checkbox.Name = "pisemna_checkbox";
+            this.pisemna_checkbox.Size = new System.Drawing.Size(67, 17);
+            this.pisemna_checkbox.TabIndex = 10;
+            this.pisemna_checkbox.Text = "pisemnej";
+            this.pisemna_checkbox.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // po_raz_pierwszy_radiobutton
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(350, 20);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "praktycznej";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.po_raz_pierwszy_radiobutton.AutoSize = true;
+            this.po_raz_pierwszy_radiobutton.Location = new System.Drawing.Point(6, 19);
+            this.po_raz_pierwszy_radiobutton.Name = "po_raz_pierwszy_radiobutton";
+            this.po_raz_pierwszy_radiobutton.Size = new System.Drawing.Size(97, 17);
+            this.po_raz_pierwszy_radiobutton.TabIndex = 10;
+            this.po_raz_pierwszy_radiobutton.TabStop = true;
+            this.po_raz_pierwszy_radiobutton.Text = "po raz pierwszy";
+            this.po_raz_pierwszy_radiobutton.UseVisualStyleBackColor = true;
+            this.po_raz_pierwszy_radiobutton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // button1
             // 
@@ -450,7 +449,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.podejscie_groupbox);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.egzamin_nazwa_label);
             this.Controls.Add(this.egzamin_combobox);
             this.Controls.Add(this.programista_radiobutton);
             this.Controls.Add(this.informatyk_radiobutton);
@@ -505,12 +504,12 @@
         private System.Windows.Forms.RadioButton informatyk_radiobutton;
         private System.Windows.Forms.RadioButton programista_radiobutton;
         private System.Windows.Forms.ComboBox egzamin_combobox;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label egzamin_nazwa_label;
         private System.Windows.Forms.GroupBox podejscie_groupbox;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.CheckBox praktyczna_checkbox;
+        private System.Windows.Forms.RadioButton po_raz_kolejny_radiobutton;
+        private System.Windows.Forms.CheckBox pisemna_checkbox;
+        private System.Windows.Forms.RadioButton po_raz_pierwszy_radiobutton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
