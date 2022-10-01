@@ -107,7 +107,7 @@
             this.pesel_input.Location = new System.Drawing.Point(137, 115);
             this.pesel_input.Mask = "00000000000";
             this.pesel_input.Name = "pesel_input";
-            this.pesel_input.Size = new System.Drawing.Size(73, 20);
+            this.pesel_input.Size = new System.Drawing.Size(72, 20);
             this.pesel_input.TabIndex = 8;
             this.pesel_input.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.pesel_input_MaskInputRejected);
             this.pesel_input.TextChanged += new System.EventHandler(this.pesel_input_TextChanged);
@@ -377,6 +377,7 @@
             this.praktyczna_checkbox.TabIndex = 11;
             this.praktyczna_checkbox.Text = "praktycznej";
             this.praktyczna_checkbox.UseVisualStyleBackColor = true;
+            this.praktyczna_checkbox.CheckedChanged += new System.EventHandler(this.praktyczna_checkbox_CheckedChanged);
             // 
             // po_raz_kolejny_radiobutton
             // 
@@ -399,6 +400,7 @@
             this.pisemna_checkbox.TabIndex = 10;
             this.pisemna_checkbox.Text = "pisemnej";
             this.pisemna_checkbox.UseVisualStyleBackColor = true;
+            this.pisemna_checkbox.CheckedChanged += new System.EventHandler(this.pisemna_checkbox_CheckedChanged);
             // 
             // po_raz_pierwszy_radiobutton
             // 
@@ -430,6 +432,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Wyczyść";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -452,6 +455,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1054, 631);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
