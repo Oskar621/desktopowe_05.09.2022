@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace whot
 {
+   
     public partial class Form1 : Form
     {
+        int last_number = 0;
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace whot
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            BackColor = Color.GhostWhite;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -41,11 +43,14 @@ namespace whot
                 egzamin_combobox.Items.Add("INF.03");
                 egzamin_combobox.Items.Add("INF.04");
         }
-        public void test_reszta(){
-            Regex rg = new Regex(@"[A-Z]{1,}");
+        public void test_reszta(int last_number){
+            Regex rg = new Regex(@"^[A-Z]{1,}$");
             Regex rg2 = new Regex(@"^[A-Z]{1,}[\s1-9]{1,}[\/]{1}[1-9]{1,}$");
             Regex rg3 = new Regex(@"^\+[0-9]{2}[\s]*[0-9]{3}[\s]*[0-9]{3}[\s]*[0-9]{3}$");
             Regex rg4 = new Regex(@"^\+[0-9{2}[\s]*[0-9]{2}[\s]+[0-9]{7}$");
+            Regex rg5 = new Regex(@"\@");
+
+
             string nazwisko = nazwisko_input.Text;
             var data_ur = data_ur_input.Text;
             var miejsce_ur = miejsce_ur_input.Text;
@@ -57,10 +62,11 @@ namespace whot
             var mail = mail_input.Text;
             string imie = imie_input.Text;
             var pesel = imie_input.Text;
-            if (nazwisko != "" || imie != "" || data_ur != "" || miejsce_ur != "" || pesel != "" || miejscowosc != "" || ulica != "" || kod_pocztowy != "" || poczta != "" || nr_tel != "" || mail != "")
+            if (nazwisko == "" || imie == "" || data_ur == "" || miejsce_ur == "" || pesel == "" || miejscowosc == "" || ulica == "" || kod_pocztowy == "" || poczta == "" || nr_tel == "" || mail == "")
             {
                 BackColor = Color.Red;
                 MessageBox.Show("Pola nie mogą być puste", "WARNING");
+                BackColor = Color.GhostWhite;
             }
             else if (!rg.IsMatch(nazwisko))
             {
@@ -92,33 +98,37 @@ namespace whot
                 ulica_input.BackColor = Color.Red;
                 MessageBox.Show("ulica musi byc z duzych liter, zawierac numer oraz '/'", "WARNING");
             }
-            
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var pesel = pesel_input.Text;
-            string imie = imie_input.Text;
-
-            var last_number = pesel[9];
-            
-            if (imie.EndsWith("a") && last_number%2 == 0)
+            else if(imie.EndsWith("A") && last_number % 2 == 1)
             {
                 pesel_input.BackColor = Color.Red;
-                imie_input.BackColor = Color.Red;
                 MessageBox.Show("Imie kończące się na 'A' musi mieć parzysta przedostatnią liczbę.", "WARNING");
             }
-            else if(!imie.EndsWith("a") && last_number%2 == 1)
+            else if (!imie.EndsWith("A") && last_number % 2 == 0)
             {
                 pesel_input.BackColor = Color.Red;
-                imie_input.BackColor = Color.Red;
                 MessageBox.Show("Imie nie kończące się na 'A' musi mieć nieparzystą przedostatnią liczbę.", "WARNING");
+            }
+            else if (!rg3.IsMatch(nr_tel) && !rg4.IsMatch(nr_tel))
+            {
+                MessageBox.Show("Zły format numeru telefonu", "WARNING");
+            }
+            else if (!rg5.IsMatch(mail_input.Text))
+            {
+                MessageBox.Show("Mail musi zawierać znak '@'", "WARNING");
             }
             else
             {
-                
-                MessageBox.Show("Pesel lub imie są podane nieprawidłowo","WARNING");
+                var wynik = "";
+                var termin_egzaminu = termin_egzaminu_combobox.SelectedValue;
+                wynik = "Deklaruję przystąpienie do egzaminu potwierdzającego kwalifikacje w zawodzie przeprowadzonego w terminie "+  termin_egzaminu + "\n\n Dane osobowe ucznia:\n Nazwisko:             " + nazwisko + "\n Imię (imiona):             " + imie + "\n Data i miejsce urodzenia:    " + data_ur + " " + miejsce_ur + "\n Numer Pesel:            " + pesel;
+                textBox1.Text = wynik;
             }
 
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            test_reszta(last_number);
 
         }
 
@@ -149,7 +159,7 @@ namespace whot
             pisemna_checkbox.Enabled = false;
             praktyczna_checkbox.Enabled = false;
             pisemna_checkbox.Checked = false;
-            praktyczna_checkbox.Checked = false;    
+            praktyczna_checkbox.Checked = false;
         }
 
         private void po_raz_kolejny_radiobutton_CheckedChanged(object sender, EventArgs e)
@@ -201,6 +211,46 @@ namespace whot
         private void pesel_input_TextChanged(object sender, EventArgs e)
         {
             pesel_input.BackColor = Color.White;
+            var pesel = pesel_input.Text;
+            if(pesel.Length > 10)
+            last_number = pesel[9];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            nazwisko_input.Text = "";
+            imie_input.Text = "";
+            pesel_input.Text = "";
+            miejsce_ur_input.Text = "";
+            data_ur_input.Text = "";
+            poczta_input.Text = "";
+            kod_pocztowy_input.Text = "";
+            miejscowosc_input.Text = "";
+            nr_tel_input.Text = "";
+            mail_input.Text = "";
+            ulica_input.Text = "";
+            pisemna_checkbox.Checked = false;
+            praktyczna_checkbox.Checked = false;
+            po_raz_kolejny_radiobutton.Checked = false;
+            po_raz_pierwszy_radiobutton.Checked = false;
+            informatyk_radiobutton.Checked = false;
+            programista_radiobutton.Checked = false;
+            egzamin_combobox.Items.Clear();
+            termin_egzaminu_combobox.Items.Clear();
+            termin_egzaminu_combobox.Items.Add("styczeń");
+            termin_egzaminu_combobox.Items.Add("czerwiec");
+
+
+        }
+
+        private void pisemna_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void praktyczna_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
