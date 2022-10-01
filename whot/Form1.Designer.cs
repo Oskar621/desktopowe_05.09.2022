@@ -110,6 +110,7 @@
             this.pesel_input.Size = new System.Drawing.Size(73, 20);
             this.pesel_input.TabIndex = 8;
             this.pesel_input.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.pesel_input_MaskInputRejected);
+            this.pesel_input.TextChanged += new System.EventHandler(this.pesel_input_TextChanged);
             // 
             // data_ur_input
             // 

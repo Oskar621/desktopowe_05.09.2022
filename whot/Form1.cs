@@ -41,70 +41,90 @@ namespace whot
                 egzamin_combobox.Items.Add("INF.03");
                 egzamin_combobox.Items.Add("INF.04");
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+        public void test_reszta(){
             Regex rg = new Regex(@"[A-Z]{1,}");
             Regex rg2 = new Regex(@"^[A-Z]{1,}[\s1-9]{1,}[\/]{1}[1-9]{1,}$");
-            var nazwisko = nazwisko_input.Text;
-            string imie = imie_input.Text;
+            Regex rg3 = new Regex(@"^\+[0-9]{2}[\s]*[0-9]{3}[\s]*[0-9]{3}[\s]*[0-9]{3}$");
+            Regex rg4 = new Regex(@"^\+[0-9{2}[\s]*[0-9]{2}[\s]+[0-9]{7}$");
+            string nazwisko = nazwisko_input.Text;
             var data_ur = data_ur_input.Text;
             var miejsce_ur = miejsce_ur_input.Text;
-            var pesel = pesel_input.Text;
             var miejscowosc = miejscowosc_input.Text;
             var ulica = ulica_input.Text;
             var kod_pocztowy = kod_pocztowy_input.Text;
             var poczta = poczta_input.Text;
             var nr_tel = nr_tel_input.Text;
             var mail = mail_input.Text;
-
-            if (imie.LastIndexOf == "a")
-            {
-
-            }
+            string imie = imie_input.Text;
+            var pesel = imie_input.Text;
             if (nazwisko != "" || imie != "" || data_ur != "" || miejsce_ur != "" || pesel != "" || miejscowosc != "" || ulica != "" || kod_pocztowy != "" || poczta != "" || nr_tel != "" || mail != "")
             {
                 BackColor = Color.Red;
-                MessageBox.Show("Pola nie mogą być puste","WARNING");
+                MessageBox.Show("Pola nie mogą być puste", "WARNING");
             }
             else if (!rg.IsMatch(nazwisko))
             {
-                BackColor = Color.Red;
-                MessageBox.Show("Nazwisko musi byc z duzych liter","WARNING");
+                nazwisko_input.BackColor = Color.Red;
+                MessageBox.Show("Nazwisko musi byc z duzych liter", "WARNING");
             }
             else if (!rg.IsMatch(imie))
             {
-                BackColor = Color.Red;
+                imie_input.BackColor = Color.Red;
                 MessageBox.Show("Imie musi byc z duzych liter", "WARNING");
             }
             else if (!rg.IsMatch(miejsce_ur))
             {
-                BackColor = Color.Red;
+                miejsce_ur_input.BackColor = Color.Red;
                 MessageBox.Show("Miejsce urodzenia musi byc z duzych liter", "WARNING");
             }
             else if (!rg.IsMatch(miejscowosc))
             {
-                BackColor = Color.Red;
+                miejscowosc_input.BackColor = Color.Red;
                 MessageBox.Show("Miejscowosc musi byc z duzych liter", "WARNING");
             }
             else if (!rg.IsMatch(poczta))
             {
-                BackColor = Color.Red;
+                poczta_input.BackColor = Color.Red;
                 MessageBox.Show("Poczta musi byc z duzych liter", "WARNING");
             }
             else if (!rg2.IsMatch(ulica))
             {
-                BackColor = Color.Red;
+                ulica_input.BackColor = Color.Red;
                 MessageBox.Show("ulica musi byc z duzych liter, zawierac numer oraz '/'", "WARNING");
             }
             
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var pesel = pesel_input.Text;
+            string imie = imie_input.Text;
 
+            var last_number = pesel[9];
             
+            if (imie.EndsWith("a") && last_number%2 == 0)
+            {
+                pesel_input.BackColor = Color.Red;
+                imie_input.BackColor = Color.Red;
+                MessageBox.Show("Imie kończące się na 'A' musi mieć parzysta przedostatnią liczbę.", "WARNING");
+            }
+            else if(!imie.EndsWith("a") && last_number%2 == 1)
+            {
+                pesel_input.BackColor = Color.Red;
+                imie_input.BackColor = Color.Red;
+                MessageBox.Show("Imie nie kończące się na 'A' musi mieć nieparzystą przedostatnią liczbę.", "WARNING");
+            }
+            else
+            {
+                
+                MessageBox.Show("Pesel lub imie są podane nieprawidłowo","WARNING");
+            }
+
+
         }
 
         private void ulica_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            ulica_input.BackColor = Color.White;
         }
 
         private void egzamin_combobox_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,42 +160,47 @@ namespace whot
 
         private void nazwisko_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            nazwisko_input.BackColor = Color.White;
         }
 
         private void imie_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            imie_input.BackColor = Color.White;
         }
 
         private void miejsce_ur_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            miejsce_ur_input.BackColor = Color.White;
         }
 
         private void pesel_input_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            BackColor = Color.White;
+            
         }
 
         private void miejscowosc_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            miejscowosc_input.BackColor = Color.White;
         }
 
         private void poczta_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            poczta_input.BackColor = Color.White;
         }
 
         private void nr_tel_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            nr_tel_input.BackColor = Color.White;
         }
 
         private void mail_input_TextChanged(object sender, EventArgs e)
         {
-            BackColor = Color.White;
+            mail_input.BackColor = Color.White;
+        }
+
+        private void pesel_input_TextChanged(object sender, EventArgs e)
+        {
+            pesel_input.BackColor = Color.White;
         }
     }
 }
