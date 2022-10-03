@@ -43,7 +43,7 @@ namespace whot
                 egzamin_combobox.Items.Add("INF.03");
                 egzamin_combobox.Items.Add("INF.04");
         }
-        public void test_reszta(){
+        public void test_reszta(int last_number){
             Regex rg = new Regex(@"[A-Z]{1,}");
             Regex rg2 = new Regex(@"^[A-Z]{1,}[\s1-9]{1,}[\/]{1}[1-9]{1,}$");
             Regex rg3 = new Regex(@"^\+[0-9]{2}[\s]*[0-9]{3}[\s]*[0-9]{3}[\s]*[0-9]{3}$");
@@ -62,7 +62,7 @@ namespace whot
             var mail = mail_input.Text;
             string imie = imie_input.Text;
             var pesel = imie_input.Text;
-            if (nazwisko == "" || imie == "" || data_ur == "" || miejsce_ur == "" || pesel == "" || miejscowosc == "" || ulica == "" || kod_pocztowy == "" || poczta == "" || nr_tel == "" || mail == ""||(!po_raz_kolejny_radiobutton.Checked || !po_raz_pierwszy_radiobutton.Checked)||(!informatyk_radiobutton.Checked || !programista_radiobutton.Checked) || termin_egzaminu_combobox.Text == ""|| !egzamin_combobox.Checked )
+            if (nazwisko == "" || imie == "" || data_ur == "" || miejsce_ur == "" || pesel == "" || miejscowosc == "" || ulica == "" || kod_pocztowy == "" || poczta == "" || nr_tel == "" || mail == ""||(!po_raz_kolejny_radiobutton.Checked || !po_raz_pierwszy_radiobutton.Checked)||(!informatyk_radiobutton.Checked || !programista_radiobutton.Checked) || termin_egzaminu_combobox.Text == "" )
             {
                 BackColor = Color.Red;
                 MessageBox.Show("Pola nie mogą być puste", "WARNING");
