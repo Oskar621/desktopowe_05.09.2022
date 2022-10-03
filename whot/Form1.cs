@@ -216,7 +216,7 @@ namespace whot
             pesel_input.BackColor = Color.White;
             var pesel = pesel_input.Text;
             if(pesel.Length > 10)
-            last_number = pesel[9];
+            last_number = pesel[9]; 
         }
 
         private void button2_Click(object sender, EventArgs e)
