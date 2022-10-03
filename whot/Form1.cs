@@ -43,8 +43,8 @@ namespace whot
                 egzamin_combobox.Items.Add("INF.03");
                 egzamin_combobox.Items.Add("INF.04");
         }
-        public void test_reszta(int last_number){
-            Regex rg = new Regex(@"^[A-Z]{1,}$");
+        public void test_reszta(){
+            Regex rg = new Regex(@"[A-Z]{1,}");
             Regex rg2 = new Regex(@"^[A-Z]{1,}[\s1-9]{1,}[\/]{1}[1-9]{1,}$");
             Regex rg3 = new Regex(@"^\+[0-9]{2}[\s]*[0-9]{3}[\s]*[0-9]{3}[\s]*[0-9]{3}$");
             Regex rg4 = new Regex(@"^\+[0-9{2}[\s]*[0-9]{2}[\s]+[0-9]{7}$");
