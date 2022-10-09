@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -110,7 +111,7 @@ namespace whot
                 {
                     wynik = wynik + "351203 " + Environment.NewLine + "Nazwa zawodu: technik informatyk";
                 }
-                textBox1.Text = wynik;
+                wynik_label.Text = wynik;
             }
 
         }
@@ -256,6 +257,30 @@ namespace whot
         }
 
         private void praktyczna_checkbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string wynik = wynik_label.Text;
+            string filepath = "";
+            OpenFileDialog vr = new OpenFileDialog();
+            vr.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if(vr.ShowDialog() == DialogResult.OK)
+            {
+                filepath = Path.GetFileName(vr.FileName); 
+            }
+            StreamWriter writer = new StreamWriter(filepath);
+            using (writer)
+            {
+                writer.WriteLine(wynik);
+            }
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

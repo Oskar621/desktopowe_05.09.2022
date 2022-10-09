@@ -66,8 +66,8 @@
             this.po_raz_pierwszy_radiobutton = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.zapisz_button = new System.Windows.Forms.Button();
+            this.wynik_label = new System.Windows.Forms.TextBox();
             this.dane_osobowe_groupbox.SuspendLayout();
             this.adres_kor_groupbox.SuspendLayout();
             this.podejscie_groupbox.SuspendLayout();
@@ -434,22 +434,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // zapisz_button
             // 
-            this.button3.Location = new System.Drawing.Point(855, 596);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(178, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Zapisz";
-            this.button3.UseVisualStyleBackColor = true;
+            this.zapisz_button.Location = new System.Drawing.Point(855, 596);
+            this.zapisz_button.Name = "zapisz_button";
+            this.zapisz_button.Size = new System.Drawing.Size(178, 23);
+            this.zapisz_button.TabIndex = 12;
+            this.zapisz_button.Text = "Zapisz";
+            this.zapisz_button.UseVisualStyleBackColor = true;
+            this.zapisz_button.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // wynik_label
             // 
-            this.textBox1.Location = new System.Drawing.Point(671, 84);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(362, 503);
-            this.textBox1.TabIndex = 9;
+            this.wynik_label.Location = new System.Drawing.Point(671, 84);
+            this.wynik_label.Multiline = true;
+            this.wynik_label.Name = "wynik_label";
+            this.wynik_label.Size = new System.Drawing.Size(362, 503);
+            this.wynik_label.TabIndex = 9;
+            this.wynik_label.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -457,8 +459,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1054, 631);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.wynik_label);
+            this.Controls.Add(this.zapisz_button);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.podejscie_groupbox);
@@ -525,8 +527,8 @@
         private System.Windows.Forms.RadioButton po_raz_pierwszy_radiobutton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button zapisz_button;
+        private System.Windows.Forms.TextBox wynik_label;
     }
 }
 
