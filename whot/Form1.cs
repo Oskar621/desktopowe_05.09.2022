@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace whot
 {
@@ -111,7 +112,7 @@ namespace whot
                 {
                     wynik = wynik + "351203 " + Environment.NewLine + "Nazwa zawodu: technik informatyk";
                 }
-                wynik_label.Text = wynik;
+                wynik_textbox.Text = wynik;
             }
 
         }
@@ -263,21 +264,16 @@ namespace whot
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string wynik = wynik_label.Text;
-            string filepath = "";
+            string wynik = wynik_textbox.Text;
             OpenFileDialog vr = new OpenFileDialog();
             vr.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
             if(vr.ShowDialog() == DialogResult.OK)
             {
-                filepath = Path.GetFileName(vr.FileName); 
+                Path.GetFileName(vr.FileName); 
             }
-            StreamWriter writer = new StreamWriter(filepath);
-            using (writer)
-            {
-                writer.WriteLine(wynik);
-            }
-            
+            File.WriteAllText(vr.FileName, wynik);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

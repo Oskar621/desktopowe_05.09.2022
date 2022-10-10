@@ -67,7 +67,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.zapisz_button = new System.Windows.Forms.Button();
-            this.wynik_label = new System.Windows.Forms.TextBox();
+            this.wynik_textbox = new System.Windows.Forms.TextBox();
             this.dane_osobowe_groupbox.SuspendLayout();
             this.adres_kor_groupbox.SuspendLayout();
             this.podejscie_groupbox.SuspendLayout();
@@ -444,14 +444,14 @@
             this.zapisz_button.UseVisualStyleBackColor = true;
             this.zapisz_button.Click += new System.EventHandler(this.button3_Click);
             // 
-            // wynik_label
+            // wynik_textbox
             // 
-            this.wynik_label.Location = new System.Drawing.Point(671, 84);
-            this.wynik_label.Multiline = true;
-            this.wynik_label.Name = "wynik_label";
-            this.wynik_label.Size = new System.Drawing.Size(362, 503);
-            this.wynik_label.TabIndex = 9;
-            this.wynik_label.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.wynik_textbox.Location = new System.Drawing.Point(671, 84);
+            this.wynik_textbox.Multiline = true;
+            this.wynik_textbox.Name = "wynik_textbox";
+            this.wynik_textbox.Size = new System.Drawing.Size(362, 503);
+            this.wynik_textbox.TabIndex = 9;
+            this.wynik_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -459,7 +459,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1054, 631);
-            this.Controls.Add(this.wynik_label);
+            this.Controls.Add(this.wynik_textbox);
             this.Controls.Add(this.zapisz_button);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -528,7 +528,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button zapisz_button;
-        private System.Windows.Forms.TextBox wynik_label;
+        private System.Windows.Forms.TextBox wynik_textbox;
     }
 }
 
