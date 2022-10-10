@@ -31,6 +31,8 @@ namespace whot
             egzamin_combobox.Items.Clear();
             egzamin_combobox.Items.Add("INF.02");
             egzamin_combobox.Items.Add("INF.03");
+            egzamin_combobox.Text = "";
+            egzamin_nazwa_label.Text = "";
         }
 
         private void programista_radiobutton_CheckedChanged(object sender, EventArgs e)
@@ -38,6 +40,8 @@ namespace whot
             egzamin_combobox.Items.Clear();
             egzamin_combobox.Items.Add("INF.03");
             egzamin_combobox.Items.Add("INF.04");
+            egzamin_combobox.Text = "";
+            egzamin_nazwa_label.Text = "";
         }
         public void test_reszta(int last_number)
         {
@@ -81,10 +85,12 @@ namespace whot
             }
             else if (!rg3.IsMatch(nr_tel) && !rg4.IsMatch(nr_tel))
             {
+                nr_tel_input.BackColor = Color.Red;
                 MessageBox.Show("Zły format numeru telefonu", "WARNING");
             }
             else if (!rg5.IsMatch(mail_input.Text))
             {
+                mail_input.BackColor= Color.Red; 
                 MessageBox.Show("Mail musi zawierać znak '@'", "WARNING");
             }
             else
@@ -270,15 +276,69 @@ namespace whot
 
             if(vr.ShowDialog() == DialogResult.OK)
             {
-                Path.GetFileName(vr.FileName); 
+                Path.GetFileName(vr.FileName);
+                File.WriteAllText(vr.FileName, wynik);
             }
-            File.WriteAllText(vr.FileName, wynik);
+            
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void nazwisko_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar)&& (e.KeyChar != '\b'))
+            {
+                e.Handled = true;                                     
+            }
+        }
+
+        private void imie_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void poczta_input_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void poczta_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void miejscowosc_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void miejsce_ur_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ulica_input_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar) && (e.KeyChar == '\b') && (Char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

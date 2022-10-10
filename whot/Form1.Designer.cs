@@ -127,6 +127,7 @@
             this.miejsce_ur_input.Size = new System.Drawing.Size(188, 20);
             this.miejsce_ur_input.TabIndex = 6;
             this.miejsce_ur_input.TextChanged += new System.EventHandler(this.miejsce_ur_input_TextChanged);
+            this.miejsce_ur_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miejsce_ur_input_KeyPress);
             // 
             // imie_input
             // 
@@ -135,6 +136,7 @@
             this.imie_input.Size = new System.Drawing.Size(264, 20);
             this.imie_input.TabIndex = 5;
             this.imie_input.TextChanged += new System.EventHandler(this.imie_input_TextChanged);
+            this.imie_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.imie_input_KeyPress);
             // 
             // nazwisko_input
             // 
@@ -143,6 +145,7 @@
             this.nazwisko_input.Size = new System.Drawing.Size(264, 20);
             this.nazwisko_input.TabIndex = 4;
             this.nazwisko_input.TextChanged += new System.EventHandler(this.nazwisko_input_TextChanged);
+            this.nazwisko_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nazwisko_input_KeyPress);
             // 
             // label4
             // 
@@ -233,6 +236,7 @@
             this.miejscowosc_input.Size = new System.Drawing.Size(295, 20);
             this.miejscowosc_input.TabIndex = 11;
             this.miejscowosc_input.TextChanged += new System.EventHandler(this.miejscowosc_input_TextChanged);
+            this.miejscowosc_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.miejscowosc_input_KeyPress);
             // 
             // ulica_input
             // 
@@ -241,6 +245,7 @@
             this.ulica_input.Size = new System.Drawing.Size(293, 20);
             this.ulica_input.TabIndex = 10;
             this.ulica_input.TextChanged += new System.EventHandler(this.ulica_input_TextChanged);
+            this.ulica_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ulica_input_KeyPress);
             // 
             // poczta_input
             // 
@@ -249,6 +254,8 @@
             this.poczta_input.Size = new System.Drawing.Size(218, 20);
             this.poczta_input.TabIndex = 9;
             this.poczta_input.TextChanged += new System.EventHandler(this.poczta_input_TextChanged);
+            this.poczta_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.poczta_input_KeyPress);
+            this.poczta_input.KeyUp += new System.Windows.Forms.KeyEventHandler(this.poczta_input_KeyUp);
             // 
             // kod_pocztowy_input
             // 
